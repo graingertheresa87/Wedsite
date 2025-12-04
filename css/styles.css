@@ -86,7 +86,6 @@ header {
   color: var(--text-light);             /* Dark text */
   font-size: clamp(12px, 3vw, 18px); /* Responsive font size */
   font-weight: 700;                  /* Bold text */
-  border: 2px solid var(--text-light); /* White border */
   cursor: pointer;                   /* Pointer on hover */
   transition: all 0.3s ease;         /* Smooth hover effects */
   flex-shrink: 0;                    /* Prevent shrinking */
@@ -96,7 +95,6 @@ header {
 .book-button:hover {
   background: var(--bg-dark);        /* Invert colors on hover */
   color: var(--accent);
-  border: 2px solid var(--accent);
 }
 
 /* ===========================
@@ -345,7 +343,6 @@ footer {
   color: var(--text-light);             /* Dark text */
   font-size: clamp(12px, 3vw, 18px); /* Responsive font size */
   font-weight: 700;                  /* Bold text */
-  border: 2px solid var(--text-light); /* White border */
   cursor: pointer;                   /* Pointer on hover */
   transition: all 0.3s ease;         /* Smooth hover effects */
   flex-shrink: 0;                    /* Prevent shrinking */
@@ -356,8 +353,6 @@ footer {
 .card .btn:hover {
  background: var(--bg-dark);        /* Invert colors on hover */
   color: var(--accent);
-  border: 2px solid var(--accent);
-  transform: scale(1.05);            /* Slight zoom effect */
 }
 
 /* ============================
@@ -433,6 +428,7 @@ footer {
 
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
+
 
 
 
