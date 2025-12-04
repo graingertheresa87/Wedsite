@@ -1,0 +1,440 @@
+/* ===========================
+   GLOBAL VARIABLES
+   ---------------------------
+   Define site-wide colors, spacing, and max width for consistent design
+=========================== */
+:root {
+  --bg-dark: #061524;       /* Main dark background color for the website */
+  --text-light: #fff;       /* Primary text color (white) */
+  --accent: #610476;        /* Accent color used for highlights, hover effects */
+  --card-bg: #0b1a34;       /* Background color for cards/sections */
+  --max-width: 1300px;      /* Maximum width for content wrapper to prevent overly wide lines */
+  --space: clamp(20px, 4vw, 60px); /* Flexible spacing variable: min 20px, max 60px, scales with viewport */
+}
+
+/* ===========================
+   BODY
+   ---------------------------
+   Base styles for font, background, and text color
+=========================== */
+body {
+  margin: 0;                       /* Remove default browser margin */
+  font-family: Arial, sans-serif;  /* Base font for readability */
+  background: var(--bg-dark);      /* Sets page background to dark color */
+  color: var(--text-light);        /* Default text color */
+  line-height: 1.6;                /* Improves readability */
+}
+
+/* ===========================
+   HEADER
+   ---------------------------
+   Sticky top header with logo, navigation links, and call-to-action button
+=========================== */
+header {
+  position: sticky;      /* Keeps header visible while scrolling */
+  top: 0;                /* Stick to top of viewport */
+  z-index: 999;          /* Ensures header is above other elements */
+  background: var(--bg-dark); /* Matches page background */
+}
+
+.header {
+  display: flex;                 /* Use Flexbox for layout */
+  justify-content: space-between;/* Push logo and nav to opposite ends */
+  align-items: center;           /* Vertically center logo and nav */
+  padding: clamp(5px, 2vw, 10px) clamp(10px, 4vw, 20px); /* Responsive padding */
+}
+
+.header img {
+  width: clamp(40px, 10vw, 80px); /* Responsive logo size */
+  flex-shrink: 0;                 /* Prevent logo from shrinking */
+  transition: width 0.3s ease;    /* Smooth resizing animation */
+}
+
+.header-right {
+  display: flex;             /* Layout nav links horizontally */
+  align-items: center;       /* Vertically center items */
+  gap: clamp(2px, 2vw, 30px); /* Space between links/buttons */
+  flex-shrink: 0;             /* Prevent shrinking on smaller screens */
+  white-space: nowrap;        /* Prevent wrapping of nav items */
+  overflow-x: auto;           /* Enable horizontal scroll if necessary */
+  margin-left: 12px;          /* Small spacing from logo */
+}
+
+.header-right a {
+  color: var(--text-light);          /* White text for nav links */
+  text-decoration: none;             /* Remove underline */
+  font-size: clamp(12px, 3vw, 18px);/* Responsive font size */
+  font-weight: 600;                  /* Slightly bold text */
+  padding: clamp(3px, 1vw, 8pxpx) clamp(3px, 1vw, 8px); /* Padding inside link */
+  border-radius: 5px;                /* Rounded corners for hover effect */
+  transition: all 0.3s ease;         /* Smooth hover transition */
+  flex-shrink: 0;                     /* Prevent shrinking */
+}
+
+.header-right a:hover {
+  color: var(--accent);              /* Change text to accent color on hover */
+  transform: scale(1.05);            /* Slight zoom effect */
+}
+
+.book-button {
+  padding: clamp(4px, 1vw, 10px) clamp(8px, 2vw, 26px); /* Button padding */
+  border-radius: 12px;               /* Rounded corners */
+  background: var(--text-light);     /* White background */
+  color: var(--bg-dark);             /* Dark text */
+  font-size: clamp(12px, 3vw, 18px); /* Responsive font size */
+  font-weight: 700;                  /* Bold text */
+  border: 2px solid var(--text-light); /* White border */
+  cursor: pointer;                   /* Pointer on hover */
+  transition: all 0.3s ease;         /* Smooth hover effects */
+  flex-shrink: 0;                    /* Prevent shrinking */
+  margin-left: 10px;                 /* Space from previous nav item */
+}
+
+.book-button:hover {
+  background: var(--bg-dark);        /* Invert colors on hover */
+  color: var(--text-light);
+  border: 2px solid var(--text-light);
+  transform: scale(1.05);            /* Slight zoom effect */
+}
+
+/* ===========================
+   MAIN WRAPPER
+   ---------------------------
+   Constrains content width and centers it
+=========================== */
+.main-wrapper {
+  max-width: var(--max-width); /* Limits width for readability */
+  margin: 0 auto;              /* Centers content horizontally */
+  padding: 20px;               /* Inner spacing */
+}
+
+/* ===========================
+   HERO CARD 
+=========================== */
+
+.hero-heading {
+  background: linear-gradient(135deg, #d220dc, #5c0368);
+  padding: 3rem 2rem;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+  border-radius: 16px;
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.65),
+    0 0 0 2px rgba(255,255,255,0.03);
+
+  text-align: center;
+  position: relative;
+  z-index: 2;
+
+  font-size: clamp(1.3rem, 4vw, 2.3rem);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  
+  margin-bottom: 2rem; /* Normal spacing */
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  display: block;
+  margin: -80px auto 1rem; 
+  /* Float above the card */
+
+  border: 4px solid rgba(255,255,255,0.15);
+
+  box-shadow:
+    0 12px 30px rgba(255,255,255,0.06),
+    0 0 20px rgba(255,255,255,0.06);
+
+  background: rgba(255,255,255,0.05);
+}
+}
+/* ===========================
+   CARD HEADINGS
+=========================== */
+
+/* Large headings that visually sit behind content cards */
+.card-heading {
+  font-size: clamp(2.5rem, 6vw, 4rem); 
+  /* Responsive size similar to hero heading */
+
+  font-weight: 900;                     
+  /* Bold, visually prominent text */
+
+  color: rgba(255, 255, 255, 0.43);    
+  /* Semi-transparent for a subtle background effect */
+
+  line-height: 1;                       
+  /* Tight line spacing for a compact look */
+
+  margin: 0;                             
+  /* Remove default spacing */
+
+  margin-bottom: -1%;                   
+  /* Slight overlap with the top of the card */
+
+  padding-left: 10px;                   
+  /* Adds space from the left edge */
+
+  text-align: left;                     
+  /* Aligns heading with card content */
+
+  z-index: 0;                            
+  /* Behind cards visually, which have z-index: 1 */
+}
+
+/* ===========================
+   CARDS
+=========================== */
+
+/* Container sections styled as cards with shadows and rounded corners */
+section.card {
+  background: var(--card-bg);      
+  /* Card background color (dark blue) */
+
+  padding: 2rem;                   
+  /* Internal spacing within the card */
+
+  margin-bottom: var(--space);     
+  /* Space between consecutive cards */
+
+  border-radius: 12px;             
+  /* Rounded corners for softer visual appeal */
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7); 
+  /* Shadow for depth, making card look elevated */
+
+  position: relative;              
+  /* Establishes a stacking context for z-index */
+
+  z-index: 1;                      
+  /* Above card headings with z-index 0 */
+}
+
+/* Subheadings within cards */
+section.card h3 {
+  font-size: clamp(1.6rem, 3vw, 2rem); 
+  /* Responsive subheading size */
+
+  font-weight: 600;                  
+  /* Slightly bold for emphasis */
+
+  margin-bottom: 0.5rem;             
+  /* Space below heading */
+
+  margin-top: 0.5px;                  
+  /* Minimal spacing above heading */
+}
+
+/* ===========================
+   LISTS
+=========================== */
+
+/* Standard unordered lists styling for cards/content */
+ul {
+  padding-left: 20px; 
+  /* Indent list items from left */
+
+  margin-bottom: 1rem; 
+  /* Space below list */
+
+  list-style: disc;   
+  /* Bullet points */
+}
+
+li {
+  margin-bottom: 0.5rem; 
+  /* Space between individual items */
+}
+
+/* ===========================
+   SKILL COLUMNS
+=========================== */
+
+/* Container for multiple skill cards displayed horizontally */
+.skills-table {
+  display: flex;          
+  /* Turns the container into a flexbox so items align in a row */
+
+  gap: 1.5rem;            
+  /* Creates spacing between each skill column */
+
+  flex-wrap: wrap;        
+  /* Allows columns to move to the next line if the screen is too small */
+
+  justify-content: center;
+  /* Centers all columns horizontally on the page */
+
+  margin: 0 auto;         
+  /* Centers the container itself inside its parent */
+}
+
+/* Individual skill column/card */
+.skill-column {
+  flex: 1 1 300px;        
+  /* flex-grow: 1 (can grow)
+     flex-shrink: 1 (can shrink)
+     flex-basis: 300px (target width)
+     → This ensures 3 columns line up on large screens,
+       but shrink and wrap on smaller screens */
+
+  background: var(--card-bg);   /* Same card background theme */
+  padding: 2rem;               /* Internal spacing */
+  border-radius: 12px;         /* Rounded corners */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);  /* Deep shadow for depth */
+
+  display: flex;               
+  /* Makes elements inside the column align nicely */
+
+  flex-direction: column;      
+  /* Stacks list items and titles vertically inside */
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+/* Entire footer container */
+footer {
+  background: var(--bg-dark);  /* Dark theme background */
+  color: var(--text-light);    /* Light text for readability */
+  padding: 20px;               /* Space inside footer */
+  text-align: center;          /* Centers all content */
+}
+
+/* Footer navigation links wrapper */
+.footer-menu {
+  display: flex;               /* Place links in a row */
+  justify-content: center;     /* Center them horizontally */
+  gap: 20px;                   /* Even space between each link */
+  margin-bottom: 10px;         /* Space before copyright line */
+}
+
+/* Footer links */
+.footer-menu a {
+  color: var(--text-light);    /* Light text to match footer color */
+  text-decoration: none;       /* Remove underline */
+  font-weight: 600;            /* Bolder text for readability */
+  transition: 0.2s;            /* Smooth hover animation */
+}
+
+/* Hover + active state */
+.footer-menu a:hover,
+.footer-menu a.active {
+  color: var(--accent);        /* Color changes on hover or when page is active */
+}
+
+/* ===========================
+   CARD BUTTONS
+=========================== */
+
+/* Buttons inside cards */
+.card .btn {
+  display: inline-block;       /* Allows padding & margin */
+  margin-top: 1rem;
+  padding: 10px 20px;
+  border-radius: 8px;          /* Rounded button */
+  text-decoration: none;       /* Remove underline */
+  background: royalblue;       /* Button color */
+  color: #fff;                 /* White text for contrast */
+  font-weight: 600;            /* Semi-bold text */
+  transition: 0.2s ease-in-out;/* Smooth hover effect */
+}
+
+/* Button hover effect */
+.card .btn:hover {
+  opacity: 0.8;                /* Slight fade to show interaction */
+}
+
+/* ============================
+   PORTFOLIO CAROUSEL
+============================ */
+
+.portfolio-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  transition: transform 0.4s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 280px;
+  max-width: 320px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.carousel-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.visit-btn {
+  display: inline-block;
+  background: #004a99;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.visit-btn:hover {
+  background: #003b7a;
+}
+
+/* NAV BUTTONS */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.carousel-btn:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+
+
+
+
+
+
+
+
+
+
