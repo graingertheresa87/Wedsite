@@ -334,20 +334,25 @@ footer {
 
 /* Buttons inside cards */
 .card .btn {
-  display: inline-block;       /* Allows padding & margin */
-  margin-top: 1rem;
-  padding: 10px 20px;
-  border-radius: 8px;          /* Rounded button */
-  text-decoration: none;       /* Remove underline */
-  background: royalblue;       /* Button color */
-  color: #fff;                 /* White text for contrast */
-  font-weight: 600;            /* Semi-bold text */
-  transition: 0.2s ease-in-out;/* Smooth hover effect */
+  padding: clamp(4px, 1vw, 10px) clamp(8px, 2vw, 26px); /* Button padding */
+  border-radius: 12px;               /* Rounded corners */
+  background: var(--accent);     /* White background */
+  color: var(--bg-dark);             /* Dark text */
+  font-size: clamp(12px, 3vw, 18px); /* Responsive font size */
+  font-weight: 700;                  /* Bold text */
+  border: 2px solid var(--text-light); /* White border */
+  cursor: pointer;                   /* Pointer on hover */
+  transition: all 0.3s ease;         /* Smooth hover effects */
+  flex-shrink: 0;                    /* Prevent shrinking */
+  margin-left: 10px;                 /* Space from previous nav item */
 }
 
 /* Button hover effect */
 .card .btn:hover {
-  opacity: 0.8;                /* Slight fade to show interaction */
+ background: var(--bg-dark);        /* Invert colors on hover */
+  color: var(--text-light);
+  border: 2px solid var(--accent);
+  transform: scale(1.05);            /* Slight zoom effect */
 }
 
 /* ============================
@@ -423,6 +428,7 @@ footer {
 
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
+
 
 
 
