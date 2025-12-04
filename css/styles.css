@@ -177,9 +177,6 @@ header {
    margin: 0;                             
   /* Remove default spacing */
 
-  margin-bottom: 0%;                   
-  /* Slight overlap with the top of the card */
-
   padding-left: 10px;                   
   /* Adds space from the left edge */
 
@@ -426,6 +423,7 @@ footer {
 
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
+
 
 
 
