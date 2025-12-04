@@ -80,7 +80,7 @@ header {
   padding: clamp(4px, 1vw, 10px) clamp(8px, 2vw, 26px); /* Button padding */
   border-radius: 12px;               /* Rounded corners */
   background: var(--accent);     /* White background */
-  color: var(--bg-dark);             /* Dark text */
+  color: var(--text-light);             /* Dark text */
   font-size: clamp(12px, 3vw, 18px); /* Responsive font size */
   font-weight: 700;                  /* Bold text */
   border: 2px solid var(--text-light); /* White border */
@@ -92,9 +92,8 @@ header {
 
 .book-button:hover {
   background: var(--bg-dark);        /* Invert colors on hover */
-  color: var(--text-light);
+  color: var(--accent);
   border: 2px solid var(--accent);
-  transform: scale(1.05);            /* Slight zoom effect */
 }
 
 /* ===========================
@@ -337,7 +336,7 @@ footer {
   padding: clamp(4px, 1vw, 10px) clamp(8px, 2vw, 26px); /* Button padding */
   border-radius: 12px;               /* Rounded corners */
   background: var(--accent);     /* White background */
-  color: var(--bg-dark);             /* Dark text */
+  color: var(--text-light);             /* Dark text */
   font-size: clamp(12px, 3vw, 18px); /* Responsive font size */
   font-weight: 700;                  /* Bold text */
   border: 2px solid var(--text-light); /* White border */
@@ -350,7 +349,7 @@ footer {
 /* Button hover effect */
 .card .btn:hover {
  background: var(--bg-dark);        /* Invert colors on hover */
-  color: var(--text-light);
+  color: var(--accent);
   border: 2px solid var(--accent);
   transform: scale(1.05);            /* Slight zoom effect */
 }
@@ -428,6 +427,7 @@ footer {
 
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
+
 
 
 
