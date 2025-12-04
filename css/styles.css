@@ -393,18 +393,24 @@ footer {
 }
 
 .visit-btn {
-  display: inline-block;
-  background: #004a99;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
+  display: inline-block;       /* Allows padding & margin */
+  margin-top: 1rem;
+  padding: 10px 20px;
+  border-radius: 8px;          /* Rounded button */
   text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease;
+  background: var(--accent);     /* White background */
+  color: var(--text-light);             /* Dark text */
+  font-size: clamp(12px, 3vw, 18px); /* Responsive font size */
+  font-weight: 700;                  /* Bold text */
+  cursor: pointer;                   /* Pointer on hover */
+  transition: all 0.3s ease;         /* Smooth hover effects */
+  flex-shrink: 0;                    /* Prevent shrinking */
+  margin-left: 10px;                 /* Space from previous nav item */
 }
 
 .visit-btn:hover {
-  background: #003b7a;
+  background: var(--bg-dark);        /* Invert colors on hover */
+  color: var(--accent);
 }
 
 /* NAV BUTTONS */
@@ -428,6 +434,7 @@ footer {
 
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
+
 
 
 
