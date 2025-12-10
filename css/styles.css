@@ -6,7 +6,7 @@
 :root {
   --bg-dark: #061524;
   --text-light: #fff;
-  --accent: #610476;
+  --accent: #b801e1;
   --card-bg: #0b1a34;
   --max-width: 1300px;
   --space: clamp(20px, 4vw, 60px);
@@ -311,6 +311,7 @@ footer {
 
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
+
 
 
 
