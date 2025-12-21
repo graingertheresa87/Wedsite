@@ -34,7 +34,6 @@ body {
 ================================================== */
 button,
 a.btn,
-.book-button,
 .visit-btn,
 .card .btn {
   display: inline-block;
@@ -58,7 +57,6 @@ a.btn,
 
 button:hover,
 a.btn:hover,
-.book-button:hover,
 .visit-btn:hover,
 .card .btn:hover {
   background: var(--bg-dark);
@@ -131,6 +129,18 @@ header {
   color: var(--accent);
   background-color: rgba(255, 255, 255, 0.05);
   transform: translateY(-2px);
+}
+
+.header-right .book-button {
+  background: none;
+  padding: clamp(6px, 1vw, 10px);
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.header-right .book-button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--accent);
 }
 
 /* ================================================
@@ -324,6 +334,7 @@ footer {
 
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
+
 
 
 
