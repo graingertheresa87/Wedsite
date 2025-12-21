@@ -132,17 +132,17 @@ header {
 }
 
 .header-right .book-button {
-  background: none;
-  padding: clamp(6px, 1vw, 10px);
+  background: var(--accent1);
+  color: var(--text-light);
+  padding: 10px 20px;
   border-radius: 6px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .header-right .book-button:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  color: var(--accent);
+  background: var(--bg-dark);
+  color: var(--accent1);
 }
-
 /* ================================================
    MAIN WRAPPER
 ================================================== */
@@ -334,6 +334,7 @@ footer {
 
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
+
 
 
 
