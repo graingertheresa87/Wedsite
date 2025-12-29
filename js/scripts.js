@@ -26,12 +26,28 @@ prevBtn.addEventListener('click', () => {
 // ====================
 // Form Submission Feedback
 // ====================
-document.addEventListener("DOMContentLoaded", function() {
-    const formMessage = document.getElementById("form-message");
+const form = document.getElementById('contactForm');
 
-    if(formMessage && formMessage.dataset.message){
-        // Set text and class
-        formMessage.textContent = formMessage.dataset.message;
-        formMessage.className = formMessage.dataset.class;
-    }
-});
+if(form){
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // prevent default submit
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Your message has been sent successfully!');
+                form.reset();
+            } else {
+                alert('Oops! There was a problem submitting your form.');
+            }
+        })
+        .catch(() => {
+            alert('Oops! There was a problem submitting your form.');
+        });
+    });
+}
