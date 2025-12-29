@@ -251,7 +251,7 @@ li {
 
 .carousel-item img {
   min-width: 100px;
-  max-width: 170px;
+  max-width: 280px;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
@@ -472,6 +472,7 @@ footer p {
   font-size: 0.9rem;
   color: var(--text-light);
 }
+
 
 
 
