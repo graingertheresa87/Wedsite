@@ -112,53 +112,31 @@
   <h2 class="card-heading">Contact Me</h2>
   <section class="card">
 
-    <!-- Success / Error Message -->
-    <div id="form-message"
-         data-message="<?php echo isset($_SESSION['formMessage']) ? $_SESSION['formMessage'] : ''; ?>"
-         data-class="<?php echo isset($_SESSION['formClass']) ? $_SESSION['formClass'] : ''; ?>">
-    </div>
-
-<!-- Contact Form -->
-    <form action="php/contact.php" method="post" class="contact-form">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Full Name:</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email Address:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Phone Number:</label>
-          <input type="tel" id="phone" name="phone">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="service">I am contacting you for:</label>
-        <select id="service" name="service" required>
-          <option value="">Select an option</option>
-          <option value="consultation">Consultation</option>
-          <option value="freelancing-ad">Branding & Marketing</option>
-          <option value="freelancing-web">Website & App Development</option>
-          <option value="full-part-time-hire">Full / Part-Time Hire</option>
-        </select>
-
-        <label for="message">Message / Project Details:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-      </div>
+    <!-- Contact Form -->
+    <form id="contactForm" action="https://formsubmit.co/graingertheresa87@gmail.com" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
       
-<!-- Honeypot anti-spam field -->
-<input type="text" name="website" style="display:none;" autocomplete="off">
+      <select name="service" required>
+        <option value="">Select a Service</option>
+        <option value="consultation">Consultation</option>
+        <option value="freelancing-ad">Branding & Marketing</option>
+        <option value="freelancing-web">Website & App Development</option>
+        <option value="full-part-time-hire">Full / Part-Time Hire</option>
+      </select>
+      
+      <textarea name="message" placeholder="Your Message" required></textarea>
 
-      <button type="submit" name="submit" class="btn">Send Message</button>
+      <!-- Honeypot for spam protection -->
+      <input type="text" name="website" style="display:none;" autocomplete="off">
+
+      <button type="submit">Send Message</button>
+      <input type="hidden" name="_captcha" value="false">
     </form>
 
   </section>
-</section>    
+</section> 
 
 </main>
 
@@ -182,4 +160,5 @@
 // Clear session messages after rendering
 unset($_SESSION['formMessage']);
 unset($_SESSION['formClass']);
+
 ?>
