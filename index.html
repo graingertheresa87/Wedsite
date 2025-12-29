@@ -102,7 +102,7 @@
         </div>
       </div>
 
-      <button class="carousel-btn prev">&#10095;</button>
+      <button class="carousel-btn prev">&#10094;</button>
       <button class="carousel-btn next">&#10095;</button>
     </section>
   </section>
@@ -111,8 +111,15 @@
 <section class="section" id="contact-form">
   <h2 class="card-heading">Contact Me</h2>
   <section class="card">
-    <form action="#" method="post" class="contact-form">
 
+    <!-- Success / Error Message -->
+    <div id="form-message"
+         data-message="<?php echo isset($_SESSION['formMessage']) ? $_SESSION['formMessage'] : ''; ?>"
+         data-class="<?php echo isset($_SESSION['formClass']) ? $_SESSION['formClass'] : ''; ?>">
+    </div>
+
+<!-- Contact Form -->
+    <form action="php/contact.php" method="post" class="contact-form">
       <div class="form-row">
         <div class="form-group">
           <label for="name">Full Name:</label>
@@ -139,16 +146,20 @@
           <option value="freelancing-web">Website & App Development</option>
           <option value="full-part-time-hire">Full / Part-Time Hire</option>
         </select>
-        <br/>
+
         <label for="message">Message / Project Details:</label>
-      
         <textarea id="message" name="message" rows="5" required></textarea>
       </div>
+      
+<!-- Honeypot anti-spam field -->
+<input type="text" name="website" style="display:none;" autocomplete="off">
 
-      <button type="submit" class="btn">Send Message</button>
+      <button type="submit" name="submit" class="btn">Send Message</button>
     </form>
+
   </section>
-</section>
+</section>    
+
 </main>
 
 <footer>
@@ -166,3 +177,9 @@
 
 </body>
 </html>
+
+<?php
+// Clear session messages after rendering
+unset($_SESSION['formMessage']);
+unset($_SESSION['formClass']);
+?>
