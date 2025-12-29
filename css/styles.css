@@ -290,7 +290,7 @@ li {
 
 .carousel-header .carousel-btn {
   position: static;           /* inline with heading */
-  transform: translateY(0);   /* vertically centered by flex */
+  transform: translateY(5px);   /* vertically centered by flex */
   background: rgba(0,0,0,0.4);
   color: #fff;
   border-radius: 50%;
@@ -472,4 +472,5 @@ footer p {
   font-size: 0.9rem;
   color: var(--text-light);
 }
+
 
