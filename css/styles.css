@@ -298,6 +298,7 @@ li {
   padding: 0.3rem 0.6rem;
   cursor: pointer;
   border: none;
+  margin-top: 0.3em; /* pushes buttons slightly lower */
 }
 
 .carousel-header .carousel-btn:hover {
@@ -471,3 +472,4 @@ footer p {
   font-size: 0.9rem;
   color: var(--text-light);
 }
+
