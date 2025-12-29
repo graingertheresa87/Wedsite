@@ -204,27 +204,35 @@ li { margin-bottom: 0.5rem; }
 }
 
 .carousel-item {
-  min-width: 280px;
-  max-width: 320px;
+  /* Remove fixed min/max widths */
+  flex: 0 0 auto; /* will be overridden by modifier classes */
   background: var(--card-bg);
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.7);
   padding: 1.5rem;
 }
 
-.carousel-4 .carousel-item { flex: 0 0 calc(25% - 2rem);
-                             text-align: center;}
-.carousel-1 .carousel-item { flex: 0 0 100%;
-                             text-align: left;}
+/* MODIFIERS */
+.carousel-4 .carousel-item {
+  flex: 0 0 calc(25% - 2rem);
+  text-align: center;
+}
+
+.carousel-1 .carousel-item {
+  flex: 0 0 100%;
+  text-align: left;
+}
 
 @media (max-width: 768px) {
-  .carousel-4 .carousel-item {
+  .carousel-4 .carousel-item,
+  .carousel-1 .carousel-item {
     flex: 0 0 100%;
   }
 }
 
 .carousel-item img {
-  width: 100%;
+  min-width: 280px;
+  max-width: 320px;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
@@ -365,5 +373,6 @@ footer {
   text-align: center;
   padding: 20px;
 }
+
 
 
