@@ -308,9 +308,10 @@ li {
   color: var(--accent1);
 }
 
-/* ================================================
-   CAROUSEL TRACK BUTTONS (Overlay on items)
-================================================== */
+.carousel-item {
+  position: relative; /* makes buttons position relative to this item */
+}
+
 .carousel-btn.track {
   position: absolute;
   top: 50%;
@@ -474,6 +475,7 @@ footer p {
   font-size: 0.9rem;
   color: var(--text-light);
 }
+
 
 
 
