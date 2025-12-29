@@ -248,34 +248,103 @@ li { margin-bottom: 0.5rem; }
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
+  font-size: clamp(14px, 2.5vw, 16px);
+  width: 100%;
 }
 
 .contact-form .form-row {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* stack on small screens */
 }
 
 .contact-form .form-group {
-  flex: 1 1 auto;
-  min-width: 250px;
+  flex: 1 1 auto; /* grow equally but don’t reserve huge space */
+  min-width: 250px; /* keep a minimum size */
   display: flex;
   flex-direction: column;
 }
 
 .contact-form label {
-  color: var(--accent);
+  margin-bottom: 0.5rem;
   font-weight: 600;
+  color: var(--accent);
 }
 
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
-  padding: 0.8rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
   background: var(--card-bg);
   color: var(--text-light);
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.2);
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s ease;
 }
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent1);
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.contact-form textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.contact-form button {
+  margin-top: 0.5rem;
+  align-self: flex-start;
+  background: var(--accent1);
+  color: var(--text-light);
+  padding: 0.9rem 1.8rem;
+  font-size: clamp(14px, 3vw, 18px);
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: var(--accent);
+  color: var(--bg-dark);
+}
+
+#form-message {
+  font-weight: 600;
+  font-size: clamp(14px, 2.5vw, 16px);
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  display: none; /* hidden by default */
+}
+
+#form-message.success {
+  display: block;
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+#form-message.error {
+  display: block;
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+@media (max-width: 600px) {
+  .contact-form .form-row {
+    flex-direction: column;
+  }
+}
+
 
 /* ================================================
    FOOTER
@@ -284,3 +353,4 @@ footer {
   text-align: center;
   padding: 20px;
 }
+
