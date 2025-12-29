@@ -270,7 +270,6 @@ li {
   display: flex;
   justify-content: space-between; /* heading left, buttons right */
   align-items: center;            /* vertically center heading */
-  margin-bottom: 1rem;            /* space to carousel below */
 }
 
 .carousel-header .card-heading {
@@ -278,7 +277,8 @@ li {
   font-weight: 900;
   color: var(--accent);
   line-height: 1;
-  margin: 0;
+  margin-top: 50px;
+  margin-bottom: -1px;
   padding-left: 10px;
   z-index: 0;
 }
@@ -441,6 +441,7 @@ footer {
   text-align: center;
   padding: 20px;
 }
+
 
 
 
