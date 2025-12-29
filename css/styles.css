@@ -245,6 +245,23 @@ li { margin-bottom: 0.5rem; }
 /* ================================================
    CAROUSEL BUTTONS
 ================================================== */
+.carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 0.5rem; /* space between prev/next buttons */
+}
+
+.carousel-controls .carousel-btn {
+  font-size: 1.5rem;  /* optional, adjust size */
+  padding: 0.3rem 0.6rem;  /* optional, adjust spacing */
+}
+
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -373,6 +390,7 @@ footer {
   text-align: center;
   padding: 20px;
 }
+
 
 
 
