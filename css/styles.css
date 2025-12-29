@@ -200,11 +200,11 @@ li {
 }
 
 /* ================================================
-   PORTFOLIO / CAROUSEL
+   PORTFOLIO CAROUSEL
 ================================================== */
 .portfolio-carousel {
   position: relative;
-  overflow: hidden; /* ensures extra items are hidden */
+  overflow: hidden;
 }
 
 .carousel-track {
@@ -213,122 +213,49 @@ li {
   transition: transform 0.4s ease-in-out;
 }
 
-/* ================================================
-   CAROUSEL ITEMS
-================================================== */
 .carousel-item {
+  min-width: 280px;
+  max-width: 320px;
   background: var(--card-bg);
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.7);
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding: 1.5rem 1.5rem 2rem;
-  flex: 0 0 auto; /* default, overridden below */
-}
-
-/* ================================================
-   CAROUSEL MODIFIERS
-================================================== */
-.carousel-4 .carousel-item {
-  flex: 0 0 calc(25% - 2rem);
+  padding: 1.5rem;
   text-align: center;
 }
 
-.carousel-1 .carousel-item {
-  flex: 0 0 100%;      /* one item per view */
-  max-width: 100%;
-  text-align: left;
-}
-
-/* Stack all items on smaller screens */
-@media (max-width: 768px) {
-  .carousel-4 .carousel-item,
-  .carousel-1 .carousel-item {
-    flex: 0 0 100%;
-  }
-}
-
 .carousel-item img {
-  min-width: 280px;
-  max-width: 320px;
+  width: 100%;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
 
-.carousel-item h3,
-.carousel-item h4,
-.carousel-item p,
-.carousel-item ul {
-  margin-bottom: 0.5rem;
+.carousel-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
 }
 
-/* ================================================
-   CAROUSEL HEADER BUTTONS (inline with H2)
-================================================== */
-.carousel-header {
-  display: flex;
-  justify-content: space-between; /* heading left, buttons right */
-  align-items: center;            /* vertically center heading */
-  margin-bottom: 1rem;            /* space to carousel below */
-}
-
-.carousel-header .card-heading {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 900;
-  color: var(--accent);
-  line-height: 1;
-  margin: 0;
-  padding-left: 10px;
-  z-index: 0;
-}
-
-.carousel-header .carousel-controls {
-  display: flex;
-  gap: 1rem;
-}
-
-.carousel-header .carousel-btn {
-  position: static;           /* inline with heading */
-  transform: translateY(0);   /* vertically centered by flex */
-  background: rgba(0,0,0,0.4);
-  color: #fff;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  padding: 0.3rem 0.6rem;
-  cursor: pointer;
-  border: none;
-}
-
-.carousel-header .carousel-btn:hover {
-  background: var(--bg-dark);
-  color: var(--accent1);
-}
-
-/* ================================================
-   CAROUSEL TRACK BUTTONS (Overlay on items)
-================================================== */
-.carousel-btn.track {
+/* Carousel nav buttons */
+.carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background: rgba(0,0,0,0.4);
-  color: #fff;
+  border: none;
+  color: white;
   font-size: 2rem;
   padding: 0.5rem 1rem;
   border-radius: 50%;
   cursor: pointer;
-  border: none;
+  z-index: 5;
+  transition: 0.3s ease;
 }
 
-.carousel-btn.track.prev { left: 10px; }
-.carousel-btn.track.next { right: 10px; }
-
-.carousel-btn.track:hover {
-  background: var(--bg-dark);
-  color: var(--accent1);
+.carousel-btn:hover {
+  background: rgba(0,0,0,0.6);
 }
 
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
 /* ================================================
    CONTACT FORM
 ================================================== */
@@ -441,6 +368,7 @@ footer {
   text-align: center;
   padding: 20px;
 }
+
 
 
 
