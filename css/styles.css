@@ -169,7 +169,7 @@ li {
 }
 
 /* ================================================
-   SKILL COLUMNS (FIXED)
+   SKILL COLUMNS 
 ================================================== */
 .skills-table {
   display: flex;
@@ -213,9 +213,6 @@ li {
   transition: transform 0.4s ease-in-out;
 }
 
-/* ================================================
-   CAROUSEL ITEMS
-================================================== */
 .carousel-item {
   background: var(--card-bg);
   border-radius: 12px;
@@ -227,9 +224,6 @@ li {
   flex: 0 0 auto; /* default, overridden below */
 }
 
-/* ================================================
-   CAROUSEL MODIFIERS
-================================================== */
 .carousel-4 .carousel-item {
   flex: 0 0 calc(25% - 2rem);
   text-align: center;
@@ -241,7 +235,6 @@ li {
   text-align: left;
 }
 
-/* Stack all items on smaller screens */
 @media (max-width: 768px) {
   .carousel-4 .carousel-item,
   .carousel-1 .carousel-item {
@@ -265,16 +258,13 @@ li {
   margin-bottom: 0.5rem;
 }
 
-/* ================================================
-   CAROUSEL BUTTONS (overlay)
-================================================== */
 .carousel-item {
   position: relative; /* makes buttons position relative to this item */
 }
 
 .carousel-btn.track {
   position: absolute;
-  top: 70%;
+  top: 50%;
   transform: translateY(-50%);
   background: rgba(0,0,0,0.4);
   color: #fff;
@@ -435,6 +425,7 @@ footer p {
   font-size: 0.9rem;
   color: var(--text-light);
 }
+
 
 
 
